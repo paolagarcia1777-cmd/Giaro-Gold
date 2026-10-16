@@ -1,0 +1,14 @@
+# Archivos de configuración con credenciales/claves
+js/config.js
+.env
+.env.local
+
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencias (por si luego usas Node.js/npm)
+node_modules/
+dist/
