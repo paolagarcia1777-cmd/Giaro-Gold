@@ -1,0 +1,199 @@
+/* ===== Variables de la identidad visual ===== */
+:root {
+  --ink: #141211;        /* negro cálido */
+  --gold: #C9A24D;       /* dorado principal */
+  --gold-dark: #A8832F;
+  --pastel: #EBDDB4;     /* dorado pastel */
+  --champagne: #F7F1E1;  /* fondo claro de secciones */
+  --text: #231F1B;
+  --muted: #6B6255;
+}
+
+html { scroll-padding-top: 80px; }
+
+body {
+  font-family: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand, .pie-marca {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+a { color: var(--gold-dark); }
+a:hover { color: var(--ink); }
+
+/* ===== Botones ===== */
+.btn-oro {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 500;
+}
+.btn-oro:hover, .btn-oro:focus {
+  background-color: var(--pastel);
+  border-color: var(--pastel);
+  color: var(--ink);
+}
+.btn-oscuro {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--pastel);
+  font-weight: 500;
+}
+.btn-oscuro:hover, .btn-oscuro:focus {
+  background-color: #2a2622;
+  border-color: #2a2622;
+  color: #fff;
+}
+
+/* ===== Navbar ===== */
+.barra-principal {
+  background-color: var(--ink);
+  border-bottom: 1px solid var(--gold);
+  --bs-navbar-color: rgba(255, 255, 255, .8);
+  --bs-navbar-hover-color: var(--pastel);
+  --bs-navbar-active-color: var(--gold);
+}
+.barra-principal .navbar-brand { color: var(--pastel); font-size: 1.7rem; }
+.barra-principal .nav-link.active { border-bottom: 2px solid var(--gold); }
+.barra-principal .dropdown-item:hover,
+.barra-principal .dropdown-item:focus { background-color: var(--champagne); color: var(--ink); }
+.form-control:focus, .form-select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 .2rem rgba(201, 162, 77, .3);
+}
+@media (min-width: 992px) {
+  #formBuscador { min-width: 300px; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  background-color: var(--ink);
+  color: #fff;
+  padding: 4.5rem 0;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  color: var(--pastel);
+  margin-bottom: 1.25rem;
+}
+.hero .lead { color: rgba(255, 255, 255, .85); margin-bottom: 1.75rem; max-width: 34rem; }
+
+/* ===== Secciones ===== */
+.seccion { padding: 4rem 0; }
+.seccion-clara { background-color: var(--champagne); }
+.seccion-titulo { font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 2rem; }
+
+.encabezado-pagina {
+  background-color: var(--ink);
+  color: #fff;
+  padding: 3.5rem 0;
+  border-bottom: 4px solid var(--gold);
+}
+.encabezado-pagina h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); color: var(--pastel); }
+.encabezado-pagina .lead { color: rgba(255, 255, 255, .85); margin: .75rem 0 0; max-width: 40rem; }
+
+.icono { width: 56px; height: 56px; }
+.icono-grande { width: 84px; height: 84px; }
+
+.enlace-oro { font-weight: 500; text-decoration: none; border-bottom: 2px solid var(--gold); color: var(--ink); }
+.enlace-oro:hover { background-color: var(--pastel); color: var(--ink); }
+
+/* ===== Pasos (secuencia real) ===== */
+.pasos {
+  list-style: none;
+  counter-reset: paso;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.pasos li { counter-increment: paso; border-top: 2px solid var(--gold); padding-top: 1rem; }
+.pasos li::before {
+  content: counter(paso);
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--gold-dark);
+}
+
+/* ===== Banda de llamada a la acción ===== */
+.banda-cta { background-color: var(--pastel); color: var(--ink); padding: 2.75rem 0; }
+
+/* ===== Servicios ===== */
+.lista-oro { padding-left: 1.2rem; }
+.lista-oro li::marker { color: var(--gold-dark); }
+
+/* ===== Nosotros ===== */
+.iniciales {
+  flex: 0 0 64px;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background-color: var(--ink);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  display: grid;
+  place-items: center;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* ===== Blog ===== */
+.entrada { border-left: 3px solid var(--gold); padding-left: 1.25rem; height: 100%; }
+.entrada-fecha { color: var(--muted); font-size: .9rem; margin-bottom: .25rem; }
+
+/* ===== Contacto ===== */
+.datos dt { font-weight: 600; color: var(--gold-dark); }
+.datos dd { margin-bottom: 1rem; }
+
+/* ===== Resultados del buscador ===== */
+.resultado:hover { background-color: var(--champagne); }
+.resultado h3 { font-size: 1.35rem; margin: 0; }
+.etiqueta-pagina {
+  background-color: var(--pastel);
+  color: var(--ink);
+  font-size: .8rem;
+  padding: .15rem .65rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+/* ===== Pie de página ===== */
+.pie { background-color: var(--ink); color: rgba(255, 255, 255, .8); padding: 3rem 0 1.5rem; border-top: 1px solid var(--gold); }
+.pie a { color: rgba(255, 255, 255, .8); text-decoration: none; }
+.pie a:hover { color: var(--pastel); }
+.pie-marca { color: var(--pastel); font-size: 1.8rem; margin-bottom: .5rem; }
+.pie-titulo { color: var(--gold); font-weight: 600; margin-bottom: .5rem; }
+.pie-legal { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .15); font-size: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+
+/* ===== Logo redondo ===== */
+.logo-redondo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;          /* vuelve la imagen un círculo */
+  object-fit: cover;           /* recorta la imagen sin deformarla */
+  border: 2px solid var(--gold);
+}
+
+/* ===== Imagen principal del hero ===== */
+.imagen-hero {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;           /* llena el espacio sin deformarse */
+  border-radius: 1rem;
+  border: 2px solid var(--gold);
+}
